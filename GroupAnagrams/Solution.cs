@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GroupAnagrams
@@ -21,6 +22,13 @@ namespace GroupAnagrams
                     groupDict[orderedCurrent].Add(strs[i]);
             }
             result.AddRange(groupDict.Values);
+            return result;
+        }
+
+        public static List<string> Anagrams(string word, List<string> words)
+        {
+            var orderedWord = string.Concat(word.OrderBy(c => c));
+            var result = words.Where(x => string.Concat(x.OrderBy(c => c)) == orderedWord).ToList();
             return result;
         }
     }

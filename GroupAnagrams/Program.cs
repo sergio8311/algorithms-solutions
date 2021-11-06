@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GroupAnagrams
 {
@@ -6,10 +7,9 @@ namespace GroupAnagrams
     {
         static void Main(string[] args)
         {
-            string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+            var strs = new List<string>{ "aabb", "abcd", "bbaa", "dada" };
 
-            var solution = new Solution();
-            solution.GroupAnagrams(strs);
+            Solution.Anagrams("abba", strs);
         }
     }
 }
